@@ -19,7 +19,7 @@ struct RecipeDetailView: View {
                     .scaledToFill()
                 //Ingredients
                 VStack(alignment: .leading) {
-                    Text("Ingredients\n")
+                    Text("Ingredients")
                         .font(.title)
                     
                     ForEach (recipe.ingredients, id: \.self) { r in

@@ -34,6 +34,7 @@ class DataService {
             }
         catch {
             print("Exception while parsing local JSON file")
+            return [Recipe]()
         }
         
         return recipeData
