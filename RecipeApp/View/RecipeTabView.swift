@@ -1,0 +1,41 @@
+//
+//  RecipeTabView.swift
+//  RecipeApp
+//
+//  Created by Тимофей Дудич on 13.02.22.
+//
+
+import SwiftUI
+
+struct RecipeTabView: View {
+    @State var tabIndex = 1
+    
+    var body: some View {
+        TabView(selection: $tabIndex) {
+            Text("Featured")
+                .tabItem {
+                    VStack {
+                        Text("Featured")
+                        Image(systemName: "star")
+                    }
+                }
+            .tag(0)
+            
+            RecipeListView()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "list.bullet")
+                        Text("List")
+                    }
+                }
+            .tag(1)
+            
+        }
+    }
+}
+
+struct RecipeTabView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecipeTabView()
+    }
+}
