@@ -29,9 +29,13 @@ class DataService {
                 
                 for index in 0..<recipeData.count {
                     recipeData[index].id = UUID()
+            //Adding ID to all ingrediens, to tell them apart while showing
+                    for ing in recipeData[index].ingredients {
+                        ing.id = UUID()
                     }
                 }
             }
+        }
         catch {
             print("Exception while parsing local JSON file")
             return [Recipe]()

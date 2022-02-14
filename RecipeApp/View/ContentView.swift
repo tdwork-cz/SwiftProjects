@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    
-    @ObservedObject var model = RecipeModel()
+    //In this propetry our Environment Variable would be stored
+    @EnvironmentObject var model:RecipeModel
     
     var body: some View {
         NavigationView {

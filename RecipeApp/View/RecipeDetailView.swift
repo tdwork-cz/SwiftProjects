@@ -21,9 +21,9 @@ struct RecipeDetailView: View {
                 VStack(alignment: .leading) {
                     Text("Ingredients")
                         .font(.title)
-                    
-                    ForEach (recipe.ingredients, id: \.self) { r in
-                        Text("-"+r)
+                //We don't need an ID anymore, cause ingrediens now is an Identifiable
+                    ForEach (recipe.ingredients) { r in
+                        Text("-"+r.name)
                     }
                 }
                 .padding()
