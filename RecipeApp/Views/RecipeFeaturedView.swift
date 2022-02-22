@@ -15,10 +15,9 @@ struct RecipeFeaturedView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Featured Recipes")
-                .bold()
                 .padding(.leading)
                 .padding(.top, 10)
-                .font(.largeTitle)
+                .font(Font.custom("Avenir Heavy", size: 35))
             
             GeometryReader { geo in
                 
@@ -39,6 +38,7 @@ struct RecipeFeaturedView: View {
                                     
                                     Text(model.recipies[index].name)
                                         .padding(5)
+                                        .font(Font.custom("Avenir", size: 16))
                                 }
                             }
                             .frame(width: geo.size.width - 50, height: geo.size.height - 110)
@@ -61,14 +61,14 @@ struct RecipeFeaturedView: View {
             VStack(alignment: .leading, spacing: 10) {
                 let currentRecipe = model.recipies[tabSelectionIndex]
                 Text("Preparation time:")
-                    .font(.headline)
-                
+                    .font(Font.custom("Avenir Heavy", size: 18))
                 Text(currentRecipe.prepTime)
+                    .font(Font.custom("Avenir", size: 16))
                 
-//                Text("Highlights")
-//                ForEach(currentRecipe.highlights) {hg in
-//                    Text(hg)
-//                }
+                Text("Highlights")
+                    .font(Font.custom("Avenir Heavy", size: 18))
+                RecipeHighlights(highlights: currentRecipe.highlights)
+                    .font(Font.custom("Avenir", size: 16))
             }
             .padding(.leading)
             .padding(.bottom)
