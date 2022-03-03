@@ -12,7 +12,6 @@ struct Module:Decodable,Identifiable {
     
     var category:String
     var content:Content
-    var test:Test
 }
 
 struct Content:Decodable, Identifiable {
@@ -37,7 +36,7 @@ struct Test:Decodable, Identifiable {
     var id:Int
     
     var image:String
-    var time:String
+    var tine:String
     var description:String
     var questions:[Question]
 }
