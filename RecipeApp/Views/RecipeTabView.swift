@@ -31,11 +31,6 @@ struct RecipeTabView: View {
             .tag(1)
         }
         .environmentObject(RecipeModel())
-        //In RecipeModel the data from the JSON is parsing
-        
-        //This Variable can be used everywhere in the app
-        //We need to add this object at the top of the App node, ex. Home Screen
-        //because higher layers of the App wouldn't have access to the envObj which is in the lower layer
     }
 }
 
