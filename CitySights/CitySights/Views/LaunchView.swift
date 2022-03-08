@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LaunchView.swift
 //  CitySights
 //
 //  Created by Тимофей Дудич on 4.03.22.
