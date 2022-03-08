@@ -13,6 +13,7 @@ class ContentModel:NSObject,ObservableObject,CLLocationManagerDelegate {
     
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
+    @Published var authorizationState = CLAuthorizationStatus.notDetermined
     
     override init() {
         super.init()
@@ -23,6 +24,7 @@ class ContentModel:NSObject,ObservableObject,CLLocationManagerDelegate {
     
     // MARK - Location Manager Delegate Methods
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        self.authorizationState = locationManager.authorizationStatus
         
         if locationManager.authorizationStatus == .authorizedAlways ||
             locationManager.authorizationStatus == .authorizedWhenInUse {
